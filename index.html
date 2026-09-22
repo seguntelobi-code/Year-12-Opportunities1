@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Year 12 Opportunities Hub</title>
+<style>
+:root{--navy:#071a33;--navy2:#0b2447;--blue:#2f7df6;--blue2:#78aefc;--ink:#14243a;--muted:#68788d;--bg:#eef3f8;--card:#fff;--line:#d8e1eb;--soft:#e8f1ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+.wrap{max-width:1160px;margin:auto}
+.header{background:linear-gradient(180deg,var(--navy),var(--navy2));color:#fff;padding:0 18px 34px}
+.header-top{max-width:1160px;margin:auto;padding:18px 0 34px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-size:13px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:#dce9ff}
+.year-pill{font-size:12px;font-weight:800;border:1px solid #ffffff33;background:#ffffff10;padding:7px 10px;border-radius:999px;color:#eaf2ff}
+.hero{max-width:1160px;margin:auto}
+.hero-kicker{color:var(--blue2);font-size:13px;font-weight:850;letter-spacing:.04em;margin-bottom:9px}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.02;margin:0 0 13px;letter-spacing:-.04em;max-width:780px}
+.hero p{margin:0;max-width:720px;color:#c8d7ec;font-size:15px;line-height:1.55}
+.hero-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.hero-chip{font-size:12px;font-weight:750;color:#eaf2ff;border:1px solid #ffffff22;background:#ffffff0d;border-radius:999px;padding:7px 10px}
+.controls{position:sticky;top:0;z-index:5;background:#eef3f8f2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:12px 18px}
+.controls-inner{max-width:1160px;margin:auto;display:grid;grid-template-columns:minmax(240px,2fr) repeat(3,minmax(145px,1fr)) auto;gap:8px}
+input,select,button{font:inherit}input,select{width:100%;border:1px solid #cbd6e3;border-radius:10px;background:#fff;padding:11px 12px;color:var(--ink);outline:none}input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2f7df615}
+button{border:1px solid #cbd6e3;background:#fff;border-radius:10px;padding:10px 13px;font-weight:750;cursor:pointer;color:var(--ink)}button:hover{border-color:#9fb0c5}
+main{padding:24px 18px 64px}
+.note{background:var(--soft);border:1px solid #cfe0fb;border-radius:12px;padding:11px 13px;color:#3f5877;font-size:13px;margin-bottom:20px}
+.summary{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.summary h2{margin:0;font-size:20px;color:var(--navy)}.count{color:var(--muted);font-size:13px}
+.section{margin:30px 0 42px}.section-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #cfd9e5;padding-bottom:10px;margin-bottom:17px}.section-head h2{margin:0;font-size:24px;color:var(--navy);letter-spacing:-.02em}.section-head p{margin:0;color:var(--muted);font-size:12px;font-weight:700}
+.area{margin:20px 0 28px}.area-head{display:flex;align-items:center;gap:9px;margin-bottom:10px}.area-head h3{margin:0;font-size:16px;color:#263c56}.dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex:0 0 auto}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:16px;display:flex;flex-direction:column;min-height:192px;box-shadow:0 2px 10px #142d5007;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease}.card:hover{transform:translateY(-1px);box-shadow:0 5px 18px #142d5010;border-color:#c7d4e2}
+.org{font-size:11px;font-weight:850;color:var(--blue);text-transform:uppercase;letter-spacing:.06em}.card h4{font-size:17px;line-height:1.28;margin:7px 0 8px;color:var(--navy)}.desc{font-size:13.5px;line-height:1.5;color:#5b6d82;margin:0 0 13px}.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}.pill{font-size:11px;padding:5px 8px;border-radius:999px;background:#f1f4f8;color:#5b6d82;font-weight:750}.deadline{background:#fff3dc;color:#9a5c00}.deadline.open{background:#e8f7f1;color:#087f5b}.actions{margin-top:11px}.view{display:block;text-align:center;text-decoration:none;background:var(--blue);color:#fff;border-radius:9px;padding:9px 12px;font-size:13px;font-weight:850}.view:hover{background:#1f69d8}
+.empty{background:#fff;border:1px dashed #cbd6e3;border-radius:14px;padding:30px;text-align:center;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:20px 18px;color:var(--muted);font-size:12px;text-align:center;background:#e9eef4}
+@media(max-width:900px){.controls-inner{grid-template-columns:1fr 1fr}.controls-inner input{grid-column:1/-1}.grid{grid-template-columns:1fr}}
+@media(max-width:560px){.header{padding:0 15px 27px}.header-top{padding:14px 0 28px}.brand{font-size:11px}.year-pill{font-size:11px}.hero-kicker{font-size:12px}h1{font-size:34px;line-height:1.03;margin-bottom:11px}.hero p{font-size:14px}.hero-links{margin-top:15px}.controls{padding:10px 12px}.controls-inner{grid-template-columns:1fr}.controls-inner input{grid-column:auto}main{padding:20px 13px 50px}.section{margin-top:26px}.section-head h2{font-size:21px}.card{min-height:0;padding:15px}.card h4{font-size:16px}.summary{margin-bottom:12px}}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="header-top"><div class="brand">Year 12 Opportunities Hub</div><div class="year-pill">For Year 12 students</div></div>
+<div class="hero"><div class="hero-kicker">WORK EXPERIENCE • INSIGHT • CAREERS</div><h1>Find opportunities that fit you.</h1><p>Explore work experience, insight days, workshops and university pathways, organised by career area.</p><div class="hero-links"><span class="hero-chip">Search by career</span><span class="hero-chip">Filter by deadline</span><span class="hero-chip">Apply from your phone</span></div></div>
+</header>
+
+<div class="controls"><div class="controls-inner">
+<input id="search" type="search" placeholder="Search organisation, opportunity or career area…">
+<select id="section"><option value="">All sections</option></select>
+<select id="area"><option value="">All career areas</option></select>
+<select id="deadline"><option value="">Any deadline</option><option value="soon">Next 60 days</option><option value="open">Open / rolling / varies</option><option value="none">No deadline</option></select>
+<button id="clear">Clear</button>
+</div></div>
+
+<main class="wrap">
+<div class="note"><strong>Before applying:</strong> Open the opportunity and check the provider’s latest eligibility, location and deadline.</div>
+<div class="summary"><h2>Opportunities</h2><div id="count" class="count"></div></div>
+<div id="content"></div>
+</main>
+<footer>Year 12 Opportunities Hub • Opportunities are updated regularly. Always check the provider’s page for the latest details.</footer>
+
+<script>
+const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS5nex-djHUm9kduo6w5AhPUbpji8s48AhFQWZ05qBrZR1OaS5tVkAtC629IGGj-rYMvyqXUOUj86b-/pub?output=csv";
+const FALLBACK = [{"link": "https://uptree.co/events/", "section": "Insight Days", "area": "Finance & Business", "title": "Women in Finance Virtual Insight Session", "organisation": "Deloitte", "deadline": "30/09/2026 event", "description": "Virtual insight session introducing students to careers in finance."}, {"link": "https://uptree.co/events/", "section": "Work Experience", "area": "Finance & Business", "title": "Acing the Application Process & Assessment Centre Workshop", "organisation": "Lloyds Banking Group", "deadline": "02/10/2026 event", "description": "Two work-experience days focused on applications and assessment-centre skills."}, {"link": "https://uptree.co/events/", "section": "Work Experience", "area": "Science, Technology & Engineering", "title": "Work Experience Insight Day", "organisation": "Arm", "deadline": "02/10/2026 event", "description": "Explore careers in technology and engineering through an in-person insight day in Bristol."}, {"link": "https://uptree.co/events/", "section": "Insight Days", "area": "Technology", "title": "Apprenticeship & Post-School Internship Application Masterclass", "organisation": "IBM", "deadline": "07/10/2026 event", "description": "Online session about applying for apprenticeships and post-school opportunities."}, {"link": "https://uptree.co/events/", "section": "Insight Days", "area": "Technology", "title": "Virtual Insight Session", "organisation": "ADM", "deadline": "14/10/2026 event", "description": "Virtual introduction to careers and opportunities at ADM."}, {"link": "https://uptree.co/events/", "section": "Work Experience", "area": "Finance & Business", "title": "Work Experience Placement", "organisation": "ADM", "deadline": "28/09/2026 event", "description": "In-person work experience opportunity in London."}, {"link": "https://uptree.co/events/", "section": "Insight Days", "area": "Cyber Security & Public Service", "title": "Student & Parent Virtual Insight Evening", "organisation": "National Cyber Force", "deadline": "20/10/2026 event", "description": "Explore careers in cyber security, intelligence, technology and national security."}, {"link": "https://uptree.co/events/", "section": "Workshops & Events", "area": "Cyber Security & Public Service", "title": "Application Masterclass", "organisation": "National Cyber Force", "deadline": "28/01/2027 event", "description": "Online application masterclass covering early-career opportunities in cyber and national security."}, {"link": "https://uptree.co/events/", "section": "Work Experience", "area": "Science, Technology & Engineering", "title": "Technology Work Experience Day", "organisation": "Arm", "deadline": "03/11/2026 event", "description": "In-person technology work experience in Cambridge."}, {"link": "https://uptree.co/events/", "section": "Work Experience", "area": "Science, Technology & Engineering", "title": "Technology Work Experience Day", "organisation": "Arm", "deadline": "05/11/2026 event", "description": "In-person technology work experience in Manchester."}, {"link": "https://uptree.co/events/", "section": "Work Experience", "area": "Science, Technology & Engineering", "title": "Work Experience Insight Day", "organisation": "CGI", "deadline": "11/11/2026 event", "description": "Explore technology, IT and consulting careers in London."}, {"link": "https://uptree.co/events/", "section": "Work Experience", "area": "Science, Technology & Engineering", "title": "Government Cyber/STEM Work Experience Day", "organisation": "Government", "deadline": "18/11/2026 event", "description": "Explore cyber security and STEM careers within government."}, {"link": "https://uptree.co/events/", "section": "Work Experience", "area": "Science, Technology & Engineering", "title": "Government Cyber/STEM Work Experience Day", "organisation": "Government", "deadline": "19/11/2026 event", "description": "Explore cyber security and STEM careers within government."}, {"link": "https://uptree.co/events/", "section": "Work Experience", "area": "Finance & Business", "title": "KPMG Work Experience Day", "organisation": "KPMG", "deadline": "04/11/2026 event", "description": "In-person work experience exploring professional services and business careers in Bristol."}, {"link": "https://uptree.co/events/", "section": "Work Experience", "area": "Finance & Business", "title": "KPMG Work Experience Day", "organisation": "KPMG", "deadline": "09/12/2026 event", "description": "In-person work experience exploring professional services and business careers in Glasgow."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Finance & Business", "title": "Investec Accounting & Finance Virtual Work Experience", "organisation": "Investec", "deadline": "Closed/expired", "description": "Online finance and accounting work experience with a certificate."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Finance & Business", "title": "Siemens Business Services Virtual Work Experience", "organisation": "Siemens", "deadline": "04/11/2026", "description": "Explore business and management careers through virtual work experience."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Finance & Business", "title": "Uncovering Insurance Virtual Work Experience", "organisation": "AXA UK", "deadline": "31/12/2026", "description": "Explore careers in insurance and business through virtual work experience."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Finance & Business", "title": "Heathrow Business Virtual Work Experience", "organisation": "Heathrow", "deadline": "27/01/2027", "description": "Explore business careers at Heathrow through online work experience."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Finance & Business", "title": "Insurance Work Experience", "organisation": "Allianz", "deadline": "24/03/2027", "description": "Virtual work experience exploring insurance and financial services."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Finance & Business", "title": "Barclays LifeSkills", "organisation": "Barclays", "deadline": "31/03/2027", "description": "Explore economics, employability and financial-services-related skills."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Finance & Business", "title": "AAT Virtual Work Experience", "organisation": "AAT", "deadline": "02/04/2027", "description": "Explore accountancy and financial careers through virtual work experience."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Finance & Business", "title": "Accountancy Work Experience", "organisation": "BDO", "deadline": "11/04/2027", "description": "Virtual introduction to accountancy and professional services."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Finance & Business", "title": "Careers in Financial Advice", "organisation": "Personal Finance Society", "deadline": "17/04/2027", "description": "Explore careers in financial advice through virtual work experience."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Technology & Business", "title": "Digital Business Consultancy Work Experience", "organisation": "CACI", "deadline": "20/04/2027", "description": "Explore digital consultancy, business and technology careers."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Finance & Business", "title": "Step Inside Accountancy", "organisation": "ICAEW", "deadline": "29/04/2027", "description": "Virtual introduction to accountancy and careers in the profession."}, {"link": "https://www.pathwayx.uk/virtual-work-experience", "section": "Work Experience", "area": "Finance & Business", "title": "Skills for Success Work Experience", "organisation": "Forvis Mazars", "deadline": "15/06/2027", "description": "Explore professional services, accounting and business careers."}, {"link": "https://www.pathwayx.uk/engineering/opportunities", "section": "Work Experience", "area": "Science, Technology & Engineering", "title": "Engineering Opportunities", "organisation": "Pathway X", "deadline": "Various", "description": "Engineering opportunities and work-experience resources for students."}, {"link": "https://www.pathwayx.uk/university/tmua", "section": "University Pathways", "area": "Mathematics & Computer Science", "title": "TMUA Preparation", "organisation": "Pathway X", "deadline": "22/10/2026 test date", "description": "Preparation resource for students taking the Test of Mathematics for University Admission."}, {"link": "https://www.pathwayx.uk/university/ucat", "section": "University Pathways", "area": "Medicine & Health", "title": "UCAT Preparation", "organisation": "Pathway X", "deadline": "26/09/2026 test deadline", "description": "Preparation resource for students applying to medicine and related courses requiring the UCAT."}, {"link": "https://www.eyfoundation.com/en_uk/apply/i-m-a-young-person/smart-futures--how-to-apply", "section": "Work Experience", "area": "Finance & Business", "title": "Smart Futures: Business & Finance – London", "organisation": "EY Foundation", "deadline": "Open", "description": "Year 12 programme exploring business and finance careers in London."}, {"link": "https://www.eyfoundation.com/en_uk/apply/i-m-a-young-person/smart-futures--how-to-apply", "section": "Work Experience", "area": "Technology & Business", "title": "Smart Futures: Business & Technology – London", "organisation": "EY Foundation", "deadline": "Open", "description": "Explore technology and business careers through a structured programme."}, {"link": "https://www.eyfoundation.com/en_uk/apply/i-m-a-young-person/smart-futures--how-to-apply", "section": "Work Experience", "area": "Technology", "title": "Tech Futures – London", "organisation": "EY Foundation", "deadline": "Open", "description": "Explore technology careers through EY Foundation's Smart Futures programme."}, {"link": "https://www.eyfoundation.com/en_uk/apply/i-m-a-young-person/smart-futures--how-to-apply", "section": "Work Experience", "area": "Construction, Property & Skilled Trades", "title": "Real Estate Futures – London", "organisation": "EY Foundation", "deadline": "Open", "description": "Explore property and real-estate careers."}, {"link": "https://www.eyfoundation.com/en_uk/apply/i-m-a-young-person/smart-futures--how-to-apply", "section": "Work Experience", "area": "Technology & Business", "title": "Data Driven Futures – London", "organisation": "EY Foundation", "deadline": "Open", "description": "Explore data, technology and business careers."}, {"link": "https://www.eyfoundation.com/en_uk/apply/i-m-a-young-person/smart-futures--how-to-apply", "section": "Work Experience", "area": "Science, Technology & Engineering", "title": "STEM Futures – Birmingham", "organisation": "EY Foundation", "deadline": "Open", "description": "Explore STEM careers through a structured work-experience programme."}, {"link": "https://www.eyfoundation.com/en_uk/apply/i-m-a-young-person/smart-futures--how-to-apply", "section": "Work Experience", "area": "Technology & Business", "title": "Business & Technology – Birmingham", "organisation": "EY Foundation", "deadline": "Open", "description": "Explore business and technology careers."}, {"link": "https://www.eyfoundation.com/en_uk/apply/i-m-a-young-person/smart-futures--how-to-apply", "section": "Work Experience", "area": "Finance & Business", "title": "Business & Finance – Birmingham", "organisation": "EY Foundation", "deadline": "Open", "description": "Explore careers in business and finance."}, {"link": "https://www.brightnetwork.co.uk/search/?content_types=jobs&job_types=Work+Experience&location=london", "section": "Work Experience", "area": "Law, Government & Public Service", "title": "Pathways to Practice First Year Insight Scheme", "organisation": "Fieldfisher", "deadline": "06/11/2026", "description": "Insight opportunity exploring legal careers. Check Year 12 eligibility before applying."}, {"link": "https://www.brightnetwork.co.uk/search/?content_types=jobs&job_types=Work+Experience&location=london", "section": "Work Experience", "area": "Law, Government & Public Service", "title": "Bright Futures Programme 2027", "organisation": "Clyde & Co", "deadline": "19/11/2026", "description": "Legal careers programme in London. Check Year 12 eligibility."}, {"link": "https://www.brightnetwork.co.uk/search/?content_types=jobs&job_types=Work+Experience&location=london", "section": "Work Experience", "area": "Law, Government & Public Service", "title": "Summer Work Experience Schemes 2027", "organisation": "Slaughter and May", "deadline": "04/12/2026", "description": "Legal work-experience schemes. Check Year 12 eligibility."}, {"link": "https://www.brightnetwork.co.uk/search/?content_types=jobs&job_types=Work+Experience&location=london", "section": "Work Experience", "area": "Law, Government & Public Service", "title": "ACCESS Development Programme 2027", "organisation": "Clifford Chance", "deadline": "22/02/2027", "description": "Development programme for eligible Year 12 students."}, {"link": "https://www.brightnetwork.co.uk/search/?content_types=jobs&job_types=Work+Experience&location=london", "section": "Work Experience", "area": "Law, Government & Public Service", "title": "Virtual Learning Programme", "organisation": "White & Case", "deadline": "Rolling", "description": "Virtual legal learning experience."}, {"link": "https://www.lawcareers.net/Explore/Features/23092025-Year-1213-and-first-year-opportunities-open-days-and-insight-schemes", "section": "Work Experience", "area": "Law, Government & Public Service", "title": "CMS Connect", "organisation": "CMS", "deadline": "Check website", "description": "Work-experience programme for school and college students, including practical skills and mentoring."}, {"link": "https://www.lawcareers.net/Explore/Features/23092025-Year-1213-and-first-year-opportunities-open-days-and-insight-schemes", "section": "Work Experience", "area": "Law, Government & Public Service", "title": "Limitless", "organisation": "Taylor Wessing", "deadline": "Check website", "description": "Year 12 legal programme with workshops, networking and work shadowing. Eligibility criteria apply."}, {"link": "https://www.lawcareers.net/Explore/Features/23092025-Year-1213-and-first-year-opportunities-open-days-and-insight-schemes", "section": "Insight Days", "area": "Law, Government & Public Service", "title": "Year 12/13 Insight Days & Open Evenings", "organisation": "TLT", "deadline": "Check website", "description": "Law insight events and open evenings for Year 12 and Year 13 students."}, {"link": "https://finder.futuresforall.org/opportunity-search?minAge=16&maxAge=19", "section": "Work Experience", "area": "Multiple Career Areas", "title": "Futures For All Opportunity Finder", "organisation": "Futures For All", "deadline": "Varies", "description": "Searchable database of in-person, remote and hybrid work-experience opportunities."}];
+
+function parseCSV(text){
+  const rows=[]; let row=[], cell="", quoted=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i], n=text[i+1];
+    if(quoted){if(c==='"'&&n==='"'){cell+='"';i++;}else if(c==='"')quoted=false;else cell+=c;}
+    else if(c==='"')quoted=true;
+    else if(c===','){row.push(cell.trim());cell="";}
+    else if(c==='\n'){row.push(cell.trim());rows.push(row);row=[];cell="";}
+    else if(c!=='\r')cell+=c;
+  }
+  if(cell.length||row.length){row.push(cell.trim());rows.push(row);}
+  return rows;
+}
+function normalise(rows){
+  if(!rows.length)return [];
+  const h=rows[0].map(x=>x.trim().toLowerCase()), ix=n=>h.indexOf(n);
+  const get=(r,n)=>ix(n)>=0?(r[ix(n)]||"").trim():"";
+  return rows.slice(1).filter(r=>r.some(x=>String(x||"").trim())).map(r=>({
+    link:get(r,"link"),section:get(r,"section"),area:get(r,"career area"),
+    title:get(r,"opportunity title"),organisation:get(r,"organisation"),
+    deadline:get(r,"deadline"),description:get(r,"description")
+  })).filter(x=>x.title||x.link);
+}
+function esc(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function safeUrl(s){try{const u=new URL(s);return["https:","http:"].includes(u.protocol)?u.href:"";}catch(e){return "";}}
+function dateOf(s){
+  const m=String(s).match(/(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})/);
+  return m?new Date(+m[3],+m[2]-1,+m[1]):null;
+}
+function soon(s){
+  const d=dateOf(s);if(!d)return false;
+  const n=new Date();n.setHours(0,0,0,0);const x=new Date(n);x.setDate(x.getDate()+60);
+  return d>=n&&d<=x;
+}
+function isOpen(s){return /open|rolling|varies|various|check website/i.test(String(s));}
+
+let opportunities=[];
+
+function card(o){
+  const url=safeUrl(o.link);
+  return `<article class="card">
+    <div class="org">${esc(o.organisation)}</div>
+    <h4>${esc(o.title)}</h4>
+    <p class="desc">${esc(o.description)}</p>
+    <div class="meta"><span class="pill">${esc(o.area||"General")}</span>
+    <span class="pill deadline ${isOpen(o.deadline)?"open":""}">Deadline: ${esc(o.deadline||"Check provider")}</span></div>
+    <div class="actions">${url?`<a class="view" href="${esc(url)}" target="_blank" rel="noopener noreferrer">View opportunity ↗</a>`:""}</div>
+  </article>`;
+}
+function populate(){
+  const ss=[...new Set(opportunities.map(o=>o.section).filter(Boolean))].sort();
+  const aa=[...new Set(opportunities.map(o=>o.area).filter(Boolean))].sort();
+  section.innerHTML='<option value="">All sections</option>'+ss.map(x=>`<option>${esc(x)}</option>`).join("");
+  area.innerHTML='<option value="">All career areas</option>'+aa.map(x=>`<option>${esc(x)}</option>`).join("");
+}
+function render(){
+  const q=search.value.trim().toLowerCase(), s=section.value, a=area.value, d=deadline.value;
+  const data=opportunities.filter(o=>{
+    const hay=[o.title,o.organisation,o.area,o.section,o.description].join(" ").toLowerCase();
+    return (!q||hay.includes(q))&&(!s||o.section===s)&&(!a||o.area===a)&&
+      (!d||(d==="soon"&&soon(o.deadline))||(d==="open"&&isOpen(o.deadline))||(d==="none"&&!o.deadline.trim()));
+  });
+  count.textContent=`${data.length} opportunit${data.length===1?"y":"ies"}`;
+  if(!data.length){content.innerHTML='<div class="empty">No opportunities match those filters. Try clearing a filter.</div>';return;}
+  const sections=[...new Set(data.map(o=>o.section||"Other"))];
+  content.innerHTML=sections.map(sec=>{
+    const inSec=data.filter(o=>(o.section||"Other")===sec);
+    const areas=[...new Set(inSec.map(o=>o.area||"General"))];
+    const groups=areas.map(ar=>{
+      const cards=inSec.filter(o=>(o.area||"General")===ar).map(card).join("");
+      return `<div class="area"><div class="area-head"><span class="dot"></span><h3>${esc(ar)}</h3></div><div class="grid">${cards}</div></div>`;
+    }).join("");
+    return `<section class="section"><div class="section-head"><h2>${esc(sec)}</h2><p>${inSec.length} listed</p></div>${groups}</section>`;
+  }).join("");
+}
+async function load(){
+  try{
+    const res=await fetch(GOOGLE_SHEET_CSV_URL,{cache:"no-store"});
+    if(!res.ok)throw new Error();
+    const live=normalise(parseCSV(await res.text()));
+    opportunities=live.length?live:FALLBACK;
+  }catch(e){opportunities=FALLBACK;}
+  populate();render();
+}
+["search","section","area","deadline"].forEach(id=>document.getElementById(id).addEventListener(id==="search"?"input":"change",render));
+clear.addEventListener("click",()=>{search.value="";section.value="";area.value="";deadline.value="";render();});
+load();
+</script>
+</body>
+</html>
